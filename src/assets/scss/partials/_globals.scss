@@ -1,0 +1,166 @@
+@import 'theme/colors';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  background-color: $surface;
+  border-collapse: collapse;
+  min-width: 50rem;
+  thead {
+    background-color: $surface-100;
+    border-bottom: 1px solid $border;
+    tr {
+      th {
+        padding: 10px;
+        text-align: left;
+        font-weight: 500;
+      }
+    }
+  }
+  tbody {
+    background-color: $surface;
+    tr {
+      border-bottom: 1px solid $border;
+      td {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+button, .btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  &.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 1px solid $border;
+    color: $on-surface-200;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $surface-200;
+    }
+    &[disabled] {
+      background-color: $surface-200;
+      color: $on-surface-100;
+      cursor: not-allowed;
+    }
+  }
+  &.primary {
+    background-color: $primary;
+    color: $dark-gray;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &.icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+    &[disabled] {
+      background-color: $surface-200;
+      color: $on-surface-100;
+      cursor: not-allowed;
+    }
+  }
+  &.secondary {
+    background-color: $secondary;
+    color: $on-surface;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &.icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    &:hover {
+      background-color: darken($secondary, 10%);
+    }
+    &[disabled] {
+      color: $on-surface-100;
+      background-color: darken($secondary, 30%);
+      cursor: not-allowed;
+    }
+  }
+  &.flat-icon-btn {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $on-surface;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $surface-200;
+    }
+    &[disabled] {
+      color: $on-surface-100;
+      cursor: not-allowed;
+    }
+  }
+  &.rounded {
+    border-radius: 50%;
+  }
+}
+
+select {
+  padding: 0.5rem;
+  padding: 10px;
+  border: 1px solid $input-border;
+  border-radius: 5px;
+  background-color: $surface;
+  font-family: 'poppins', sans-serif;
+  color: $on-surface;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+    border-color: $input-border-focus;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $input-border;
+  border-radius: 5px;
+  background-color: $surface;
+  font-family: 'poppins', sans-serif;
+  color: $on-surface;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+    border-color: $input-border-focus;
+  }
+  &:disabled {
+    background-color: $surface-200;
+    cursor: not-allowed;
+  }
+}

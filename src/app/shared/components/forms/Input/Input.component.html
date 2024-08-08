@@ -1,0 +1,32 @@
+<div class="form-grid">
+  @if (label) {
+  <label
+    [for]="inputId"
+    [ngClass]="{
+    'label-invalid': hasErrorsSignal()
+    }"
+  >
+    {{label}}
+    @if (isRequired()) {
+      <ng-container>*</ng-container>
+    }
+  </label>
+  }
+  <input
+    [id]="inputId"
+    [type]="type"
+    [placeholder]="placeholder || ''"
+    [formControl]="value"
+    [min]="minDate()"
+    (input)="writeValue(value.value || '')"
+    (blur)="onTouched()"
+    [ngClass]="{
+      'ng-invalid ng-dirty': hasErrorsSignal()
+    }"
+  />
+  @if (control) {
+  <div>
+    <app-validator [control]="control"></app-validator>
+  </div>
+  }
+</div>

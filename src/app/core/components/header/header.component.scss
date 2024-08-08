@@ -1,0 +1,25 @@
+@import 'theme/colors';
+:host {
+  display: block;
+}
+
+header {
+  width: 100%;
+  background-color: $surface;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-inline: 15px;
+  position: fixed;
+  top: 0;
+
+  .header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+}

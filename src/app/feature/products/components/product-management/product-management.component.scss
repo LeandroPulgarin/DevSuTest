@@ -1,0 +1,36 @@
+@import 'theme/colors';
+:host {
+  display: block;
+}
+.management-container {
+  margin-top: 40px;
+  background: $surface;
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid $border;
+    padding-block: 10px;
+  }
+
+  &__form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  @media (width <= 768px) {
+    &__form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 10px;
+  }
+}

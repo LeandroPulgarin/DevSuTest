@@ -1,0 +1,41 @@
+<section class="management-container">
+  <h1 class="management-container__title">Formulario de registro</h1>
+  <form [formGroup]="manageForm" class="management-container__form-grid">
+    <app-input inputId="id" label="ID" formControlName="id"></app-input>
+    <app-input
+      inputId="Nombre"
+      label="Nombre"
+      formControlName="name"
+    ></app-input>
+    <app-input
+      inputId="Descripcion"
+      label="Descripción"
+      formControlName="description"
+    ></app-input>
+    <app-input inputId="Logo" label="Logo" formControlName="logo"></app-input>
+    <app-input
+      inputId="Fecha liberacion"
+      label="Fecha liberación"
+      type="date"
+      formControlName="date_release"
+      [minDate]="minDate"
+    ></app-input>
+    <app-input
+      inputId="Fecha revision"
+      label="Fecha revisión"
+      type="date"
+      formControlName="date_revision"
+    ></app-input>
+  </form>
+  <div class="management-container__actions">
+    <button class="flat-icon-btn" routerLink="/">
+      Volver
+    </button>
+    @if(!isEdit()){
+    <button class="secondary" (click)="resetForm()">Reiniciar</button>
+    }
+    <button class="primary" (click)="submit()" [disabled]="manageForm.invalid">
+      {{isEdit() ? 'Editar' : 'Enviar'}}
+    </button>
+  </div>
+</section>

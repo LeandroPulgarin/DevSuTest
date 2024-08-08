@@ -1,0 +1,45 @@
+<section class="products-container">
+  <div class="products-container__header">
+    <app-input
+      inputId="search"
+      placeholder="Buscar..."
+      [formControl]="searchTerm"
+    />
+    <a class="btn primary icon-btn" routerLink="management">
+      <span class="material-symbols-outlined"> add </span>
+      Agregar
+    </a>
+  </div>
+  <app-table [columns]="tableColumns" [data]="filteredProducts">
+    <ng-template #rowTemplate let-product>
+      <tr>
+        <td>
+          <img
+            class="products-container__logo"
+            [src]="'assets/png/'+product.logo+'.png'"
+            alt="Logo"
+          />
+        </td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.date_release | localDate }}</td>
+        <td>{{product.date_revision | localDate }}</td>
+        <td>
+          <button class="btn flat-icon-btn rounded" appMenu [menuOverlay]="menuTemplate">
+            <span class="material-symbols-outlined"> more_vert </span>
+          </button>
+          <ng-template #menuTemplate>
+            <a class="btn flat-icon-btn" [routerLink]="'management/'+product.id">
+              <span class="material-symbols-outlined"> edit </span>
+              Editar
+            </a>
+            <button class="btn flat-icon-btn" (click)="deleteProduct(product)">
+              <span class="material-symbols-outlined"> delete </span>
+              Eliminar
+            </button>
+          </ng-template>
+        </td>
+      </tr>
+    </ng-template>
+  </app-table>
+</section>
